@@ -213,14 +213,23 @@ elif section == "Prediction":
         else:
             st.success("Non-diabetic POAG")
 
-        # -------------------------------
-        # SHAP BAR PLOT
-        # -------------------------------
-        st.markdown("### Feature Importance (SHAP)")
+# -------------------------------
+# SHAP BAR PLOT (NO MATPLOTLIB)
+# -------------------------------
+st.markdown("### Feature Importance (SHAP)")
 
-        explainer = shap.TreeExplainer(model)
-        shap_values = explainer.shap_values(df)
+explainer = shap.TreeExplainer(model)
+shap_values = explainer.shap_values(df)
 
-        fig, ax = plt.subplots()
-        shap.summary_plot(shap_values, df, plot_type="bar", show=False)
-        st.pyplot(fig)
+# Convert SHAP values to DataFrame
+shap_df = pd.DataFrame({
+    "Feature": df.columns,
+    "SHAP Value": shap_values[0]
+})
+
+# Sort by importance
+shap_df["abs_val"] = shap_df["SHAP Value"].abs()
+shap_df = shap_df.sort_values(by="abs_val", ascending=False).head(10)
+
+# Plot using Streamlit native chart
+st.bar_chart(shap_df.set_index("Feature")["SHAP Value"])
