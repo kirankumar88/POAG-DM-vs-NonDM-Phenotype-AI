@@ -107,11 +107,13 @@ streamlit run app.py
 ```
 POAG-DM-vs-NonDM-Phenotype-AI/
 │
-├── app.py                      # Main Streamlit app
-├── requirements.txt           # Python dependencies
-├── runtime.txt                # Python version (CRITICAL)
-├── README.md                  # Documentation
+├── app.py
+├── requirements.txt
+├── README.md
 ├── .gitignore
+│
+├── .streamlit/              
+│   └── runtime.txt          
 │
 ├── model/
 │   ├── best_xgb_model.pkl
@@ -122,7 +124,6 @@ POAG-DM-vs-NonDM-Phenotype-AI/
 │
 ├── notebooks/
 │   └── model_development.ipynb
-```
 
 ---
 
