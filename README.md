@@ -105,9 +105,14 @@ streamlit run app.py
 ## Project Structure
 
 ```
-POAG-AI-Risk-Prediction/
+POAG-DM-vs-NonDM-Phenotype-AI/
 │
-├── app.py
+├── app.py                      # Main Streamlit app
+├── requirements.txt           # Python dependencies
+├── runtime.txt                # Python version (CRITICAL)
+├── README.md                  # Documentation
+├── .gitignore
+│
 ├── model/
 │   ├── best_xgb_model.pkl
 │   └── feature_columns.json
@@ -117,10 +122,6 @@ POAG-AI-Risk-Prediction/
 │
 ├── notebooks/
 │   └── model_development.ipynb
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
 ```
 
 ---
