@@ -95,13 +95,6 @@ streamlit run app.py
 
 ---
 
-### Live Application
-
-Github link : https://github.com/kirankumar88/POAG-DM-vs-NonDM-Phenotype-AI
-
-Streamlit App: *Add your deployed link here*
-
----
 
 ## Workflow Diagram
 
